@@ -1,12 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Mi Web de Arte</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guchisart | Galería de Arte</title>
+    <style>
+        /* Estilos básicos para que se vea profesional */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; line-height: 1.6; color: #333; }
+        
+        /* Barra de navegación */
+        nav { background: #2c3e50; color: white; padding: 1rem; position: sticky; top: 0; text-align: center; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+        nav a:hover { color: #3498db; }
+
+        header { background: #f4f4f4; padding: 2rem; text-align: center; }
+        section { padding: 2rem; max-width: 800px; margin: auto; border-bottom: 1px solid #eee; }
+        
+        .galeria { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .producto { border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: center; }
+        .producto img { max-width: 100%; border-radius: 5px; }
+
+        footer { text-align: center; padding: 2rem; background: #2c3e50; color: white; }
+    </style>
 </head>
-<body style="text-align: center; font-family: sans-serif;">
-    <h1>¡Bienvenidos a mi página de arte!</h1>
-    <p>Esta es mi primera web en GitHub Pages.</p>
-    <!-- Si quieres ver tu imagen, asegúrate de que el nombre coincida abajo -->
-    <img src="Letrero.png" alt="Mi Letrero" style="max-width: 80%;">
+<body>
+
+    <nav>
+        <a href="#productos">Productos</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#sobre-mi">Sobre mí</a> <!-- Mi sugerencia -->
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+    <header>
+        <h1>Guchisart</h1>
+        <p>Arte original y láminas exclusivas</p>
+    </header>
+
+    <section id="productos">
+        <h2>Mis Láminas y Posters</h2>
+        <div class="galeria">
+            <!-- Ejemplo de producto -->
+            <div class="producto">
+                <img src="Letrero.png" alt="Lámina de ejemplo">
+                <h3>Lámina "Nombre del Arte"</h3>
+                <p>20,00€</p>
+                <button>Comprar (Próximamente)</button>
+            </div>
+            <!-- Puedes copiar el div de arriba para añadir más fotos -->
+        </div>
+    </section>
+
+    <section id="servicios">
+        <h2>Servicios y Citas</h2>
+        <p>¿Buscas un diseño personalizado? Reserva una cita para hablar de tu proyecto.</p>
+        <a href="mailto:tu-correo@ejemplo.com" style="background: #3498db; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Solicitar Cita</a>
+    </section>
+
+    <section id="sobre-mi">
+        <h2>Sobre la Artista</h2>
+        <p>Aquí puedes contar tu historia, qué te inspira a crear y tu técnica. Esto genera mucha confianza en los compradores.</p>
+    </section>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>Sígueme en mis redes sociales:</p>
+        <a href="https://instagram.com">Instagram</a> | 
+        <a href="https://twitter.com">Twitter/X</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Guchisart - Todos los derechos reservados</p>
+    </footer>
+
 </body>
 </html>
