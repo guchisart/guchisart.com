@@ -16,24 +16,49 @@
         }
 
         body { 
-            background-color: var(--bg-color); 
-            color: var(--text-color); 
-            font-family: var(--font-body); 
-            margin: 0; 
-            line-height: 1.2; 
+            <nav>
+    <a href="#" class="logo">guchisart</a>
+    <div class="links">
+        <a href="#productos">Trabajos</a>
+        <a href="#sobre-mi">Estudio</a>
+        <a href="#contacto">Contacto</a>
+    </div>
+</nav>
+<!-- Busca esto en tu código: -->
+<a href="#" class="logo">guchisart</a>
+
+<!-- Y cámbialo por esto: -->
+<a href="#" class="logo">
+    <img src="tu-logo.png" alt="Guchisart Logo" style="height: 30px;">
+</a>
+
         }
         
         /* Navegación Minimalista */
-        nav { 
-            padding: 2rem; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center;
-            position: sticky; 
-            top: 0; 
-            background: rgba(0,0,0,0.9);
-            z-index: 100;
-        }
+      /* Navegación Ajustada */
+nav { 
+    padding: 2rem 5%; /* Un poco más de margen lateral */
+    display: flex; 
+    flex-direction: row-reverse; /* Esto mueve el logo a la derecha y links a la izquierda */
+    justify-content: space-between; 
+    align-items: center;
+    position: sticky; 
+    top: 0; 
+    background: rgba(0,0,0,0.9);
+    z-index: 100;
+}
+
+/* Ajuste de margen para los links ahora que están a la izquierda */
+nav .links a { 
+    color: white; 
+    margin-right: 25px; /* Margen a la derecha en lugar de a la izquierda */
+    margin-left: 0;
+    text-decoration: none; 
+    font-size: 0.85rem; 
+    text-transform: uppercase; 
+    letter-spacing: 1.5px; 
+}
+
         .logo { font-family: var(--font-bold); font-size: 1.5rem; text-decoration: none; color: white; }
         nav .links a { color: white; margin-left: 20px; text-decoration: none; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
 
