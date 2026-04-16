@@ -4,141 +4,129 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GUCHISART | Design Studio</title>
-    <!-- Importamos una fuente muy similar a Futura Std Extra Bold -->
+    <!-- Importamos la tipografía de impacto -->
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
         :root {
             --bg-color: #000000;
             --text-color: #ffffff;
-            --accent-color: #555555; /* Gris para bordes de inputs */
             --font-bold: 'Archivo Black', sans-serif;
             --font-body: 'Inter', sans-serif;
         }
 
         body { 
-            <nav>
-    <a href="#" class="logo">guchisart</a>
-    <div class="links">
-        <a href="#productos">Trabajos</a>
-        <a href="#sobre-mi">Estudio</a>
-        <a href="#contacto">Contacto</a>
-    </div>
-</nav>
-<!-- Busca esto en tu código: -->
-<a href="#" class="logo">guchisart</a>
-
-<!-- Y cámbialo por esto: -->
-<a href="#" class="logo">
-    <img src="tu-logo.png" alt="Guchisart Logo" style="height: 30px;">
-</a>
-
+            background-color: var(--bg-color); 
+            color: var(--text-color); 
+            font-family: var(--font-body); 
+            margin: 0; 
+            line-height: 1.2; 
         }
         
-        /* Navegación Minimalista */
-      /* Navegación Ajustada */
-nav { 
-    padding: 2rem 5%; /* Un poco más de margen lateral */
-    display: flex; 
-    flex-direction: row-reverse; /* Esto mueve el logo a la derecha y links a la izquierda */
-    justify-content: space-between; 
-    align-items: center;
-    position: sticky; 
-    top: 0; 
-    background: rgba(0,0,0,0.9);
-    z-index: 100;
-}
+        /* NAVEGACIÓN: Logo a la derecha y Links a la izquierda */
+        nav { 
+            padding: 2rem 5%; 
+            display: flex; 
+            flex-direction: row-reverse; /* ESTO MUEVE EL LOGO A LA DERECHA */
+            justify-content: space-between; 
+            align-items: center;
+            position: sticky; 
+            top: 0; 
+            background: rgba(0,0,0,0.9);
+            z-index: 100;
+        }
 
-/* Ajuste de margen para los links ahora que están a la izquierda */
-nav .links a { 
-    color: white; 
-    margin-right: 25px; /* Margen a la derecha en lugar de a la izquierda */
-    margin-left: 0;
-    text-decoration: none; 
-    font-size: 0.85rem; 
-    text-transform: uppercase; 
-    letter-spacing: 1.5px; 
-}
+        .logo { 
+            font-family: var(--font-bold); 
+            font-size: 1.2rem; 
+            text-decoration: none; 
+            color: white; 
+            text-transform: lowercase;
+        }
 
-        .logo { font-family: var(--font-bold); font-size: 1.5rem; text-decoration: none; color: white; }
-        nav .links a { color: white; margin-left: 20px; text-decoration: none; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+        nav .links a { 
+            color: white; 
+            margin-right: 25px; 
+            text-decoration: none; 
+            font-size: 0.8rem; 
+            text-transform: uppercase; 
+            letter-spacing: 1.5px; 
+        }
 
+        /* TÍTULOS GRANDES */
         header { 
-            height: 60vh; 
+            height: 70vh; 
             display: flex; 
             flex-direction: column; 
             justify-content: center; 
             padding: 0 10%; 
         }
 
-        h1, h2 { 
+        h1 { 
             font-family: var(--font-bold); 
-            text-transform: none; 
+            font-size: clamp(4rem, 12vw, 9rem); 
             margin: 0;
+            line-height: 0.85;
+        }
+
+        section { padding: 100px 10%; border-top: 1px solid #1a1a1a; }
+        
+        h2 { 
+            font-family: var(--font-bold); 
+            font-size: clamp(2.5rem, 6vw, 5rem); 
+            margin-bottom: 40px;
             line-height: 0.9;
         }
 
-        h1 { font-size: clamp(4rem, 10vw, 8rem); margin-bottom: 20px; }
-        h2 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 30px; }
-
-        section { padding: 80px 10%; border-top: 1px solid #222; }
-
-        /* Estilo tipo HH Global para Contacto */
+        /* SECCIÓN CONTACTO ESTILO HH GLOBAL */
         .contacto-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: 60px;
         }
 
         .contacto-title-pile h2 {
             font-size: 5rem;
             line-height: 0.8;
-            margin-bottom: 10px;
+            margin: 0;
+            opacity: 0.9;
         }
 
-        /* Formulario Estilo Dark */
+        /* FORMULARIO */
         form { display: flex; flex-direction: column; gap: 15px; }
         input, select, textarea {
             background: transparent;
-            border: 1px solid var(--accent-color);
-            padding: 15px;
+            border: 1px solid #333;
+            padding: 18px;
             color: white;
             font-family: var(--font-body);
-            font-size: 1rem;
         }
-
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
 
         button {
             background: white;
             color: black;
             border: none;
-            padding: 15px;
+            padding: 20px;
             font-family: var(--font-bold);
             cursor: pointer;
             text-transform: uppercase;
-            transition: 0.3s;
+            margin-top: 10px;
         }
 
-        button:hover { background: #ccc; }
-
-        /* Galería */
-        .galeria { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .producto { text-align: left; }
-        .producto img { width: 100%; filter: grayscale(100%); transition: 0.5s; }
-        .producto img:hover { filter: grayscale(0%); }
-
-        footer { padding: 50px 10%; font-size: 0.8rem; color: #666; border-top: 1px solid #222; }
+        /* PIE DE PÁGINA */
+        footer { padding: 60px 10%; border-top: 1px solid #1a1a1a; color: #444; }
 
         @media (max-width: 768px) {
             .contacto-container { grid-template-columns: 1fr; }
-            h1 { font-size: 3.5rem; }
+            h1 { font-size: 4rem; }
         }
     </style>
 </head>
 <body>
 
     <nav>
+        <!-- El logo sale a la derecha por el CSS -->
         <a href="#" class="logo">guchisart</a>
+        
         <div class="links">
             <a href="#productos">Trabajos</a>
             <a href="#sobre-mi">Estudio</a>
@@ -148,18 +136,12 @@ nav .links a {
 
     <header>
         <h1>Guchisart<br>Creative.</h1>
-        <p style="font-size: 1.2rem; font-weight: 300; color: #888;">Graphic Design | Based in Madrid</p>
+        <p style="color: #666; margin-top: 20px; font-size: 1.1rem;">Graphic Design | Based in Madrid</p>
     </header>
 
     <section id="productos">
         <h2>Selected<br>Works</h2>
-        <div class="galeria">
-            <div class="producto">
-                <img src="Letrero.png" alt="Lámina">
-                <h3 style="font-family: var(--font-bold); margin-top:15px;">Lámina Art 01</h3>
-                <p>Digital Illustration</p>
-            </div>
-        </div>
+        <p style="color: #888;">[ Aquí irán tus fotos de láminas ]</p>
     </section>
 
     <section id="contacto">
@@ -167,34 +149,22 @@ nav .links a {
             <div class="contacto-title-pile">
                 <h2>Contacto</h2>
                 <h2>Correo</h2>
-                <h2>Contacto</h2>
-                <h2 style="font-family: serif; font-weight: normal;">联系我们</h2>
+                <h2 style="font-family: serif; font-style: italic; font-weight: normal;">Contact</h2>
             </div>
             
             <div class="form-side">
-                <p style="margin-bottom: 20px; font-weight: bold;">Ponte en contacto</p>
                 <form>
-                    <div class="form-row">
-                        <input type="text" placeholder="Nombre de pila">
-                        <input type="text" placeholder="Apellido">
-                    </div>
-                    <input type="text" placeholder="Compañía">
-                    <input type="email" placeholder="Correo electrónico">
-                    <input type="tel" placeholder="Número de teléfono">
-                    <select>
-                        <option>Seleccione un país</option>
-                    </select>
-                    <textarea placeholder="Mensaje" rows="4"></textarea>
-                    <button type="submit">Enviar mensaje</button>
+                    <input type="text" placeholder="Nombre">
+                    <input type="email" placeholder="Email">
+                    <textarea placeholder="¿En qué puedo ayudarte?" rows="4"></textarea>
+                    <button type="submit">Enviar Solicitud</button>
                 </form>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Guchisart - Todos los derechos reservados. <br>
-        <a href="https://instagram.com/guchisart" style="color:white; text-decoration:none;">Instagram</a> / 
-        <a href="https://x.com/guchisart" style="color:white; text-decoration:none;">Twitter</a></p>
+        <p>&copy; 2026 Guchisart Studio</p>
     </footer>
 
 </body>
