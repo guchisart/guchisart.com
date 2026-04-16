@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GUCHISART | Design Studio</title>
-    <!-- Importamos la tipografía de impacto -->
+    <!-- Importamos una fuente muy similar a Futura Std Extra Bold -->
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
         :root {
             --bg-color: #000000;
             --text-color: #ffffff;
+            --accent-color: #555555; /* Gris para bordes de inputs */
             --font-bold: 'Archivo Black', sans-serif;
             --font-body: 'Inter', sans-serif;
         }
@@ -22,11 +23,10 @@
             line-height: 1.2; 
         }
         
-        /* NAVEGACIÓN: Logo a la derecha y Links a la izquierda */
+        /* Navegación Minimalista */
         nav { 
-            padding: 2rem 5%; 
+            padding: 2rem; 
             display: flex; 
-            flex-direction: row-reverse; /* ESTO MUEVE EL LOGO A LA DERECHA */
             justify-content: space-between; 
             align-items: center;
             position: sticky; 
@@ -34,99 +34,86 @@
             background: rgba(0,0,0,0.9);
             z-index: 100;
         }
+        .logo { font-family: var(--font-bold); font-size: 1.5rem; text-decoration: none; color: white; }
+        nav .links a { color: white; margin-left: 20px; text-decoration: none; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
 
-        .logo { 
-            font-family: var(--font-bold); 
-            font-size: 1.2rem; 
-            text-decoration: none; 
-            color: white; 
-            text-transform: lowercase;
-        }
-
-        nav .links a { 
-            color: white; 
-            margin-right: 25px; 
-            text-decoration: none; 
-            font-size: 0.8rem; 
-            text-transform: uppercase; 
-            letter-spacing: 1.5px; 
-        }
-
-        /* TÍTULOS GRANDES */
         header { 
-            height: 70vh; 
+            height: 60vh; 
             display: flex; 
             flex-direction: column; 
             justify-content: center; 
             padding: 0 10%; 
         }
 
-        h1 { 
+        h1, h2 { 
             font-family: var(--font-bold); 
-            font-size: clamp(4rem, 12vw, 9rem); 
+            text-transform: none; 
             margin: 0;
-            line-height: 0.85;
-        }
-
-        section { padding: 100px 10%; border-top: 1px solid #1a1a1a; }
-        
-        h2 { 
-            font-family: var(--font-bold); 
-            font-size: clamp(2.5rem, 6vw, 5rem); 
-            margin-bottom: 40px;
             line-height: 0.9;
         }
 
-        /* SECCIÓN CONTACTO ESTILO HH GLOBAL */
+        h1 { font-size: clamp(4rem, 10vw, 8rem); margin-bottom: 20px; }
+        h2 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 30px; }
+
+        section { padding: 80px 10%; border-top: 1px solid #222; }
+
+        /* Estilo tipo HH Global para Contacto */
         .contacto-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 50px;
         }
 
         .contacto-title-pile h2 {
             font-size: 5rem;
             line-height: 0.8;
-            margin: 0;
-            opacity: 0.9;
+            margin-bottom: 10px;
         }
 
-        /* FORMULARIO */
+        /* Formulario Estilo Dark */
         form { display: flex; flex-direction: column; gap: 15px; }
         input, select, textarea {
             background: transparent;
-            border: 1px solid #333;
-            padding: 18px;
+            border: 1px solid var(--accent-color);
+            padding: 15px;
             color: white;
             font-family: var(--font-body);
+            font-size: 1rem;
         }
+
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
 
         button {
             background: white;
             color: black;
             border: none;
-            padding: 20px;
+            padding: 15px;
             font-family: var(--font-bold);
             cursor: pointer;
             text-transform: uppercase;
-            margin-top: 10px;
+            transition: 0.3s;
         }
 
-        /* PIE DE PÁGINA */
-        footer { padding: 60px 10%; border-top: 1px solid #1a1a1a; color: #444; }
+        button:hover { background: #ccc; }
+
+        /* Galería */
+        .galeria { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .producto { text-align: left; }
+        .producto img { width: 100%; filter: grayscale(100%); transition: 0.5s; }
+        .producto img:hover { filter: grayscale(0%); }
+
+        footer { padding: 50px 10%; font-size: 0.8rem; color: #666; border-top: 1px solid #222; }
 
         @media (max-width: 768px) {
             .contacto-container { grid-template-columns: 1fr; }
-            h1 { font-size: 4rem; }
+            h1 { font-size: 3.5rem; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <!-- El logo sale a la derecha por el CSS -->
         <a href="#" class="logo">guchisart</a>
-        
         <div class="links">
             <a href="#productos">Trabajos</a>
             <a href="#sobre-mi">Estudio</a>
@@ -136,12 +123,18 @@
 
     <header>
         <h1>Guchisart<br>Creative.</h1>
-        <p style="color: #666; margin-top: 20px; font-size: 1.1rem;">Graphic Design | Based in Madrid</p>
+        <p style="font-size: 1.2rem; font-weight: 300; color: #888;">Graphic Design | Based in Madrid</p>
     </header>
 
     <section id="productos">
         <h2>Selected<br>Works</h2>
-        <p style="color: #888;">[ Aquí irán tus fotos de láminas ]</p>
+        <div class="galeria">
+            <div class="producto">
+                <img src="Letrero.png" alt="Lámina">
+                <h3 style="font-family: var(--font-bold); margin-top:15px;">Lámina Art 01</h3>
+                <p>Digital Illustration</p>
+            </div>
+        </div>
     </section>
 
     <section id="contacto">
@@ -149,22 +142,34 @@
             <div class="contacto-title-pile">
                 <h2>Contacto</h2>
                 <h2>Correo</h2>
-                <h2 style="font-family: serif; font-style: italic; font-weight: normal;">Contact</h2>
+                <h2>Contacto</h2>
+                <h2 style="font-family: serif; font-weight: normal;">联系我们</h2>
             </div>
             
             <div class="form-side">
+                <p style="margin-bottom: 20px; font-weight: bold;">Ponte en contacto</p>
                 <form>
-                    <input type="text" placeholder="Nombre">
-                    <input type="email" placeholder="Email">
-                    <textarea placeholder="¿En qué puedo ayudarte?" rows="4"></textarea>
-                    <button type="submit">Enviar Solicitud</button>
+                    <div class="form-row">
+                        <input type="text" placeholder="Nombre de pila">
+                        <input type="text" placeholder="Apellido">
+                    </div>
+                    <input type="text" placeholder="Compañía">
+                    <input type="email" placeholder="Correo electrónico">
+                    <input type="tel" placeholder="Número de teléfono">
+                    <select>
+                        <option>Seleccione un país</option>
+                    </select>
+                    <textarea placeholder="Mensaje" rows="4"></textarea>
+                    <button type="submit">Enviar mensaje</button>
                 </form>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Guchisart Studio</p>
+        <p>&copy; 2026 Guchisart - Todos los derechos reservados. <br>
+        <a href="https://instagram.com/guchisart" style="color:white; text-decoration:none;">Instagram</a> / 
+        <a href="https://x.com/guchisart" style="color:white; text-decoration:none;">Twitter</a></p>
     </footer>
 
 </body>
