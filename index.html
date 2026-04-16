@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,72 +9,46 @@
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
         :root {
-            /* Navegación: Logo a la izquierda con espacio */
-nav { 
-    padding: 40px 5%; /* Más espacio arriba para que no pegue al borde */
-    display: flex; 
-    justify-content: space-between; /* Logo a un lado, enlaces al otro */
-    align-items: center;
-    position: absolute; /* Para que flote sobre el fondo negro */
-    width: 90%; /* Ajustado al padding */
-    top: 0; 
-    z-index: 100;
-}
-
-.logo { 
-    font-family: var(--font-bold); 
-    font-size: 1.4rem; /* Un pelín más grande para que destaque */
-    text-decoration: none; 
-    color: white; 
-    text-transform: lowercase;
-    letter-spacing: -0.5px;
-}
-
-nav .links a { 
-    color: white; 
-    margin-left: 30px; /* Espacio entre los enlaces */
-    text-decoration: none; 
-    font-size: 0.8rem; 
-    text-transform: uppercase; 
-    letter-spacing: 1px;
-    font-weight: bold;
-}
-
+            --bg-color: #000000;
+            --text-color: #ffffff;
+            --accent-color: #555555; /* Gris para bordes de inputs */
+            --font-bold: 'Archivo Black', sans-serif;
+            --font-body: 'Inter', sans-serif;
         }
 
-        body { 
-            background-color: var(--bg-color); 
-            color: var(--text-color); 
-            font-family: var(--font-body); 
-            margin: 0; 
-            line-height: 1.2; 
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-body);
+            margin: 0;
+            line-height: 1.2;
         }
-        
+       
         /* Navegación Minimalista */
-        nav { 
-            padding: 2rem; 
-            display: flex; 
-            justify-content: space-between; 
+        nav {
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
             align-items: center;
-            position: sticky; 
-            top: 0; 
+            position: sticky;
+            top: 0;
             background: rgba(0,0,0,0.9);
             z-index: 100;
         }
         .logo { font-family: var(--font-bold); font-size: 1.5rem; text-decoration: none; color: white; }
         nav .links a { color: white; margin-left: 20px; text-decoration: none; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
 
-        header { 
-            height: 60vh; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: center; 
-            padding: 0 10%; 
+        header {
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 10%;
         }
 
-        h1, h2 { 
-            font-family: var(--font-bold); 
-            text-transform: none; 
+        h1, h2 {
+            font-family: var(--font-bold);
+            text-transform: none;
             margin: 0;
             line-height: 0.9;
         }
@@ -171,7 +146,7 @@ nav .links a {
                 <h2>Contacto</h2>
                 <h2 style="font-family: serif; font-weight: normal;">联系我们</h2>
             </div>
-            
+           
             <div class="form-side">
                 <p style="margin-bottom: 20px; font-weight: bold;">Ponte en contacto</p>
                 <form>
@@ -194,7 +169,7 @@ nav .links a {
 
     <footer>
         <p>&copy; 2026 Guchisart - Todos los derechos reservados. <br>
-        <a href="https://instagram.com/guchisart" style="color:white; text-decoration:none;">Instagram</a> / 
+        <a href="https://instagram.com/guchisart" style="color:white; text-decoration:none;">Instagram</a> /
         <a href="https://x.com/guchisart" style="color:white; text-decoration:none;">Twitter</a></p>
     </footer>
 
