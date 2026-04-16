@@ -8,11 +8,37 @@
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #000000;
-            --text-color: #ffffff;
-            --accent-color: #555555; /* Gris para bordes de inputs */
-            --font-bold: 'Archivo Black', sans-serif;
-            --font-body: 'Inter', sans-serif;
+            /* Navegación: Logo a la izquierda con espacio */
+nav { 
+    padding: 40px 5%; /* Más espacio arriba para que no pegue al borde */
+    display: flex; 
+    justify-content: space-between; /* Logo a un lado, enlaces al otro */
+    align-items: center;
+    position: absolute; /* Para que flote sobre el fondo negro */
+    width: 90%; /* Ajustado al padding */
+    top: 0; 
+    z-index: 100;
+}
+
+.logo { 
+    font-family: var(--font-bold); 
+    font-size: 1.4rem; /* Un pelín más grande para que destaque */
+    text-decoration: none; 
+    color: white; 
+    text-transform: lowercase;
+    letter-spacing: -0.5px;
+}
+
+nav .links a { 
+    color: white; 
+    margin-left: 30px; /* Espacio entre los enlaces */
+    text-decoration: none; 
+    font-size: 0.8rem; 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
         }
 
         body { 
